@@ -23,6 +23,9 @@ const products = [
 
 app.use(cors({ origin: "*", methods: ["GET", "POST"] }));
 
+app.get("/", (req, res, next) => {
+  res.json({ success: true, data: "hello world" });
+});
 app.get("/products", (req, res, next) => {
   res.json({ success: true, data: products });
 });
